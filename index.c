@@ -12,7 +12,7 @@ void main(){
     {
         player=(player%2==0) ? 2 : 1;
     char mark=(player==1) ? 'X':'o';
-    printf("Enter the number: %d\n",player);
+    printf("Enter the Player: %d\n",player);
     scanf("%d", &input);
     if(input<1 || input>9){
         printf("invalid input");
@@ -40,18 +40,30 @@ void printBoard(){
      printf("\n\n");
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+int checkWin(){
+    if (board[1]==board[2] && board[2]==board[3]){
+        return 1;
+    }
+     if (board[1]==board[4] && board[4]==board[7]){
+        return 1;
+    }
+     if (board[7]==board[8] && board[8]==board[9]){
+        return 1;
+    }
+     if (board[3]==board[6] && board[6]==board[9]){
+        return 1;
+    }
+    if (board[1]==board[5] && board[5]==board[9]){
+        return 1;
+    }
+     if (board[3]==board[5] && board[5]==board[7]){
+        return 1;
+    }
+     if (board[2]==board[5] && board[5]==board[8]){
+        return 1;
+    }
+     if (board[4]==board[5] && board[5]==board[6]){
+        return 1;
+    }
+    return -1;
+}
