@@ -4,9 +4,19 @@
 void printBoard();
 char board[]={'0','1','2','3','4','5','6','7','8','9'};
 void main(){
-    int player=1;
-    char mark=(player=1) ? 
-   printBoard();
+    int player=1 ,input;
+     printBoard();
+    char mark=(player=1) ? 'X':'o';
+    
+    printf("Enter the number:");
+    scanf("%d", &input);
+    if(input<1 || input>9){
+        printf("invalid input");
+        return printBoard;
+    }
+    board[1]=mark;
+    
+  printBoard();
 }
 void printBoard(){
     printf("\n\n");
