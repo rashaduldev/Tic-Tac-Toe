@@ -7,10 +7,11 @@ void main(){
     int player=1 ,input,status=-1;
      printBoard();
     
-    while(status=-1)
+    while(status==-1)
     
     {
-    char mark=(player=1) ? 'X':'o';
+        player=(player%2==0) ? 2 : 1;
+    char mark=(player==1) ? 'X':'o';
     printf("Enter the number: %d\n",player);
     scanf("%d", &input);
     if(input<1 || input>9){
